@@ -1,4 +1,3 @@
-
 #include <Stepper.h>
 int PhotoR = A0;
 int nombredepas = 48*64;
@@ -13,7 +12,6 @@ void setup() {
   Serial.begin(9600);
   monMoteur.setSpeed(9);
   pinMode(PhotoR, INPUT);
-
 }
 
 void loop() {
@@ -27,16 +25,13 @@ void loop() {
     monMoteur.step(1000);
     delay(1000);
     porte_en_haut = false;
-    porte_en_bas = true;}
+    porte_en_bas = true;
+  }
 
   if (PhotoRLue > 520 && porte_en_bas) { 
     monMoteur.step(-1000);
     delay(1000);
     porte_en_haut = true;
-    porte_en_bas = false; }
-    
-   
-   
-   
-   
-   }
+    porte_en_bas = false; 
+  }
+}
